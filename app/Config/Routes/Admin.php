@@ -29,6 +29,11 @@ $routes->group('admin', ['filter' => 'adminlogin'], function ($routes) {
     $routes->get('employees/new', "Admin\Employee::new");
     $routes->get('employees/(:segment)/edit', "Admin\Employee::edit/$1");
     $routes->get('employees/(:segment)/profile-picture', "Admin\Employee::profilePicture/$1");
+
+    $routes->get('users', 'Admin\User::index');
+    $routes->get('users/(:segment)/edit', 'Admin\User::edit/$1');
+    $routes->put('users/(:segment)', 'Admin\User::update/$1');
+    $routes->put('users/(:segment)/reset-password', 'Admin\User::resetPassword/$1');
 });
 
 try {

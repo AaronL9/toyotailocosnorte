@@ -191,22 +191,22 @@ $homeEscape = static function ($value) {
         <!-- Featured car -->
         <div class="relative h-72 overflow-hidden rounded-xl bg-gray-100
                    sm:col-span-2 sm:h-96 lg:col-span-7 lg:h-auto lg:min-h-[28rem]">
-            <img src="/img/banner2-DKS0BEOM.jpg" alt="" loading="lazy"
-                class="absolute inset-0 h-full w-full object-contain p-3 sm:p-5" />
+            <img src="static/bz4x_hev_banner.jpg" alt="" loading="lazy"
+                class="absolute inset-0 h-full w-full object-cover" />
         </div>
 
         <!-- Second car -->
         <div class="relative h-64 overflow-hidden rounded-xl bg-gray-100
                    sm:h-72 lg:col-span-6 lg:h-80">
-            <img src="/img/banner2-DKS0BEOM.jpg" alt="" loading="lazy"
-                class="absolute inset-0 h-full w-full object-contain p-3 sm:p-5" />
+            <img src="static/land-cruiser-fj.webp" alt="" loading="lazy"
+                class="absolute inset-0 h-full w-full object-cover" />
         </div>
 
         <!-- Third car -->
         <div class="relative h-64 overflow-hidden rounded-xl bg-gray-100
                    sm:h-72 lg:col-span-6 lg:h-80">
-            <img src="/img/banner2-DKS0BEOM.jpg" alt="" loading="lazy"
-                class="absolute inset-0 h-full w-full object-contain p-3 sm:p-5" />
+            <img src="static/hilux-banner.webp" alt="" loading="lazy"
+                class="absolute inset-0 h-full w-full object-cover" />
         </div>
 
     </div>
