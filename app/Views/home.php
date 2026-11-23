@@ -281,7 +281,7 @@ $homeEscape = static function ($value) {
                                     <?php if (!empty($agent->agent_photo)): ?>
                                         <img src="/img/agents/<?= esc($agent->agent_photo) ?>"
                                             alt="<?= esc($agent->agent_fname . ' ' . $agent->agent_lname) ?>"
-                                            class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300" />
+                                            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                                     <?php else: ?>
                                         <div class="absolute inset-0 flex items-center justify-center">
                                             <svg class="size-16 text-gray-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
@@ -392,7 +392,7 @@ $homeEscape = static function ($value) {
             </button>
             <!-- End Arrows -->
 
-            <div class="hs-carousel-pagination flex justify-center absolute -bottom-6 left-0 right-0 gap-x-2"></div>
+            <!-- <div class="hs-carousel-pagination flex justify-center absolute -bottom-6 left-0 right-0 gap-x-2"></div> -->
             <!-- End Pagination -->
         </div>
     </div>
