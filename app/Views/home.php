@@ -277,7 +277,7 @@ $homeEscape = static function ($value) {
                         <div class="hs-carousel-slide px-1">
                             <div class="group flex flex-col h-full bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200">
                                 <!-- Photo -->
-                                <div class="relative w-full overflow-hidden bg-gray-100" style="padding-bottom: 133.33%;">
+                                <div class="relative w-full overflow-hidden bg-gray-100 aspect-square">
                                     <?php if (!empty($agent->agent_photo)): ?>
                                         <img src="/img/agents/<?= esc($agent->agent_photo) ?>"
                                             alt="<?= esc($agent->agent_fname . ' ' . $agent->agent_lname) ?>"
