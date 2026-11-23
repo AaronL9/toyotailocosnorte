@@ -7,6 +7,8 @@ use CodeIgniter\Router\RouteCollection;
  */
 // $routes->get('/', 'Home::index');
 
+// $routes->get('test', 'Home::test');
+
 $routes->group('admin', ['filter' => 'admin'], function ($routes) {
     $routes->get('login', 'Admin\Auth::index');
 

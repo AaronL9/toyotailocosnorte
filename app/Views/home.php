@@ -254,81 +254,157 @@ $homeEscape = static function ($value) {
 
 <!-- Team Section -->
 <section id="team" class="bg-white text-black py-16 px-6 scroll-p-24 md:px-16 lg:px-24 xl:px-32">
-    <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-
-        <div class="flex flex-col items-center lg:items-start gap-6">
-            <h2 class="text-center lg:text-left text-4xl md:text-5xl/16 max-w-lg leading-tight text-black">
-                The team driving the brand forward.
-            </h2>
-            <p class="text-center lg:text-left text-sm text-black max-w-md">
-                Our marketing specialists, strategists, and storytellers connect
-                drivers with the innovation and reliability of Toyota Motor
-                Corporation through campaigns that inspire trust and loyalty.
-            </p>
-            <a href="/agents"
-                class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md border border-red-600 bg-red-600 px-6 font-medium text-white transition-all duration-100 [box-shadow:5px_5px_rgb(153_27_27)] active:translate-x-0.75 active:translate-y-0.75 active:[box-shadow:0px_0px_rgb(153_27_27)]">
-                See more
-            </a>
-        </div>
-
-        <!-- Right column: team photo -->
-        <div class="relative aspect-[4/3] w-full overflow-hidden rounded-none border border-gray-200 bg-gray-100">
-            <span class="absolute inset-0 grid place-items-center text-sm font-medium text-gray-500">
-                Team photo
-            </span>
-
-        </div>
-        <!-- Right Content - Image Gallery -->
-        <!-- <div class="grid grid-cols-2 gap-6 max-w-2xl mx-auto lg:mx-0">
-            <?php for ($i = 0; $i < count($agents); $i++): ?>
-                <?php if (($i + 1) % 2 != 0): ?>
-                    <div class="group relative overflow-hidden rounded-2xl shadow-xl cursor-pointer">
-                        <img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                            src="/img/agents/<?= $agents[$i]->agent_photo ?>" alt="Team Member 1" />
-                        <div
-                            class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/90 via-black/60 to-transparent p-4">
-                            <h3 class="text-white font-semibold text-lg mb-1">
-                                <?php echo "{$agents[$i]->agent_fname} {$agents[$i]->agent_lname}" ?>
-                            </h3>
-                            <div class="space-y-1 text-xs text-gray-300">
-                                <p><?= $agents[$i]->agent_email ?></p>
-                                <p><?= $agents[$i]->agent_contact ?></p>
-                                <div class="flex gap-3 items-center">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <?php else: ?>
-                    <div class="group relative overflow-hidden rounded-2xl shadow-xl cursor-pointer mt-12">
-                        <img class="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105"
-                            src="/img/agents/<?= $agents[$i]->agent_photo ?>" alt="Team Member 2" />
-                        <div
-                            class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/90 via-black/60 to-transparent p-4">
-                            <h3 class="text-white font-semibold text-lg mb-1">
-                                <?php echo "{$agents[$i]->agent_fname} {$agents[$i]->agent_lname}" ?>
-                            </h3>
-                            <p class="text-gray-300 text-xs mb-2">Marketing Professional</p>
-                            <div class="space-y-1 text-xs text-gray-300">
-                                <p><?= $agents[$i]->agent_email ?></p>
-                                <p><?= $agents[$i]->agent_contact ?></p>
-                                <div class="flex gap-3 items-center">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <?php endif; ?>
-            <?php endfor; ?>
-        </div> -->
+    <!-- Header -->
+    <div id="team-header" class="flex flex-col items-center text-center gap-3 mb-10 md:mb-12">
+        <span class="text-xs font-semibold tracking-widest uppercase text-red-600">
+            Our Team
+        </span>
+        <h2 class="text-3xl md:text-4xl font-bold leading-tight text-gray-900 max-w-xl">
+            Meet the team behind the brand
+        </h2>
+        <p class="text-sm md:text-base text-gray-600 max-w-md">
+            Specialists connecting drivers with Toyota's innovation and reliability.
+        </p>
     </div>
 
-    <!-- Maps Section -->
-    <div class="mx-auto mt-12 w-full max-w-7xl overflow-hidden rounded-none border border-gray-200 bg-gray-100">
-        <iframe title="Map showing Toyota Baguio City"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4655.075548185539!2d120.58381357591469!3d18.154873380241728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x338ec6f77174b4d3%3A0xb7e9d1f7356a9216!2sToyota%20Ilocos%20Norte!5e1!3m2!1sen!2sph!4v1794988637745!5m2!1sen!2sph"
-            class="block h-72 w-full border-0 md:h-96" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-            allowfullscreen>
-        </iframe>
+    <div class="max-w-7xl mx-auto w-full">
+        <!-- Carousel -->
+        <div id="hs-carousel" class="relative" data-hs-carousel='{"loadingClasses": "opacity-0", "dotsItemClasses": "hs-carousel-active:bg-blue-700 hs-carousel-active:border-blue-700 size-3 border border-gray-400 rounded-full cursor-pointer", "isAutoPlay": true, "isInfiniteLoop": true, "slidesQty": {"xs": 1,"sm": 3}}'>
+            <div class="hs-carousel relative w-full overflow-hidden">
+                <!-- Carousel body -->
+                <div class="hs-carousel-body flex flex-nowrap relative transition-transform duration-700 -mx-1 opacity-0">
+                    <?php foreach ($agents as $agent): ?>
+                        <div class="hs-carousel-slide px-1">
+                            <div class="group flex flex-col h-full bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200">
+                                <!-- Photo -->
+                                <div class="relative w-full overflow-hidden bg-gray-100" style="padding-bottom: 133.33%;">
+                                    <?php if (!empty($agent->agent_photo)): ?>
+                                        <img src="/img/agents/<?= esc($agent->agent_photo) ?>"
+                                            alt="<?= esc($agent->agent_fname . ' ' . $agent->agent_lname) ?>"
+                                            class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300" />
+                                    <?php else: ?>
+                                        <div class="absolute inset-0 flex items-center justify-center">
+                                            <svg class="size-16 text-gray-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                fill="currentColor">
+                                                <path fill-rule="evenodd"
+                                                    d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
+
+                                <!-- Info -->
+                                <div class="flex flex-col flex-1 px-4 py-4">
+                                    <h3 class="text-sm font-bold text-gray-900 leading-tight mb-2">
+                                        <?= esc($agent->agent_fname . ' ' . (!empty($agent->agent_mname) ? $agent->agent_mname . ' ' : '') . $agent->agent_lname) ?>
+                                    </h3>
+
+                                    <!-- Contact -->
+                                    <div class="flex flex-col gap-y-1.5 mt-auto">
+                                        <?php if (!empty($agent->agent_contact)): ?>
+                                            <a href="tel:<?= esc($agent->agent_contact) ?>"
+                                                class="inline-flex items-center gap-x-2 text-xs text-gray-500 hover:text-gray-800 transition-colors">
+                                                <svg class="size-3.5 shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round">
+                                                    <path
+                                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                                                </svg>
+                                                <?= esc($agent->agent_contact) ?>
+                                            </a>
+                                        <?php endif; ?>
+
+                                        <?php if (!empty($agent->agent_email)): ?>
+                                            <a href="mailto:<?= esc($agent->agent_email) ?>"
+                                                class="inline-flex items-center gap-x-2 text-xs text-gray-500 hover:text-gray-800 transition-colors truncate">
+                                                <svg class="size-3.5 shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round">
+                                                    <rect width="20" height="16" x="2" y="4" rx="2" />
+                                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                                                </svg>
+                                                <span class="truncate"><?= esc($agent->agent_email) ?></span>
+                                            </a>
+                                        <?php endif; ?>
+                                    </div>
+
+                                    <!-- Social Links -->
+                                    <?php $hasSocial = !empty($agent->agent_fb) || !empty($agent->agent_ig) || !empty($agent->agent_tw); ?>
+                                    <?php if ($hasSocial): ?>
+                                        <div class="flex items-center gap-x-3 mt-4 pt-3 border-t border-gray-100">
+                                            <?php if (!empty($agent->agent_fb)): ?>
+                                                <a href="<?= esc($agent->agent_fb) ?>" target="_blank" rel="noopener noreferrer"
+                                                    class="text-gray-400 hover:text-blue-600 transition-colors" aria-label="Facebook">
+                                                    <svg class="size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                        fill="currentColor">
+                                                        <path
+                                                            d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                                                    </svg>
+                                                </a>
+                                            <?php endif; ?>
+                                            <?php if (!empty($agent->agent_ig)): ?>
+                                                <a href="<?= esc($agent->agent_ig) ?>" target="_blank" rel="noopener noreferrer"
+                                                    class="text-gray-400 hover:text-pink-500 transition-colors" aria-label="Instagram">
+                                                    <svg class="size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                        fill="currentColor">
+                                                        <path
+                                                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+                                                    </svg>
+                                                </a>
+                                            <?php endif; ?>
+                                            <?php if (!empty($agent->agent_tw)): ?>
+                                                <a href="<?= esc($agent->agent_tw) ?>" target="_blank" rel="noopener noreferrer"
+                                                    class="text-gray-400 hover:text-sky-500 transition-colors" aria-label="Twitter / X">
+                                                    <svg class="size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                        fill="currentColor">
+                                                        <path
+                                                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.912-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                                    </svg>
+                                                </a>
+                                            <?php endif; ?>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+                <!-- End Carousel Body -->
+            </div>
+
+            <!-- Arrows -->
+            <button type="button" class="hs-carousel-prev hs-carousel-disabled:opacity-50 hs-carousel-disabled:cursor-default absolute top-1/2 left-2 inline-flex justify-center items-center size-10 bg-white text-gray-800 rounded-full shadow-sm hover:bg-gray-50 -translate-y-1/2 focus:outline-none">
+                <span class="text-2xl" aria-hidden="true">
+                    <svg class="shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m15 18-6-6 6-6" />
+                    </svg>
+                </span>
+                <span class="sr-only">Previous</span>
+            </button>
+            <button type="button" class="hs-carousel-next hs-carousel-disabled:opacity-50 hs-carousel-disabled:cursor-default absolute top-1/2 right-2 inline-flex justify-center items-center size-10 bg-white text-gray-800 rounded-full shadow-sm hover:bg-gray-50 -translate-y-1/2 focus:outline-none">
+                <span class="sr-only">Next</span>
+                <span class="text-2xl" aria-hidden="true">
+                    <svg class="shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m9 18 6-6-6-6" />
+                    </svg>
+                </span>
+            </button>
+            <!-- End Arrows -->
+
+            <div class="hs-carousel-pagination flex justify-center absolute -bottom-6 left-0 right-0 gap-x-2"></div>
+            <!-- End Pagination -->
+        </div>
     </div>
 </section>
+
+<!-- Maps Section -->
+<div class="mx-auto mt-12 w-full max-w-7xl overflow-hidden rounded-none border border-gray-200 bg-gray-100">
+    <iframe title="Map showing Toyota Baguio City"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4655.075548185539!2d120.58381357591469!3d18.154873380241728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x338ec6f77174b4d3%3A0xb7e9d1f7356a9216!2sToyota%20Ilocos%20Norte!5e1!3m2!1sen!2sph!4v1794988637745!5m2!1sen!2sph"
+        class="block h-72 w-full border-0 md:h-96" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen>
+    </iframe>
+</div>
 
 <?= $this->endSection() ?>

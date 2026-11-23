@@ -21,7 +21,7 @@ $tags = $vite->tags(
     <?= $tags->css ?>
 </head>
 
-<body class=" flex flex-col min-h-screen">
+<body class="flex flex-col min-h-screen">
     <?= $this->include('data-privacy') ?>
 
     <header id="header"
@@ -90,10 +90,9 @@ $tags = $vite->tags(
         </nav>
     </header>
 
-
-
-    <?= $this->renderSection("mainContent") ?>
-
+    <main>
+        <?= $this->renderSection("mainContent") ?>
+    </main>
 
     <!-- FOOTER -->
     <footer class="py-8 bg-black text-white mt-auto">

@@ -24,9 +24,14 @@ class Home extends BaseController
             ->where('agent_inactive', 0)
             ->where('agent_delete', 0)
             ->select()
-            ->get("4")
+            ->get()
             ->getResult();
 
         return view('home', $data);
+    }
+
+    public function test()
+    {
+        return view('test');
     }
 }
