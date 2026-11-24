@@ -75,56 +75,20 @@
                                 Call our team
                             </h4>
 
-                            <div class="mt-3 flex flex-wrap gap-x-3 gap-y-2 text-sm text-zinc-300">
-                                <a href="tel:09956310512"
-                                    class="rounded-sm underline-offset-4 hover:text-white hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-400">
-                                    0995-631-0512
-                                </a>
-
-                                <span class="text-zinc-500" aria-hidden="true">/</span>
-
-                                <a href="tel:09209662715"
-                                    class="rounded-sm underline-offset-4 hover:text-white hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-400">
-                                    0920-966-2715
-                                </a>
-                            </div>
-
                             <dl class="mt-5 space-y-4 border-t border-white/10 pt-5">
-                                <div>
-                                    <dt class="text-xs text-zinc-400">
-                                        Vehicle Sales Department
-                                    </dt>
-                                    <dd class="mt-1">
-                                        <a href="tel:0776440112"
-                                            class="text-sm text-zinc-200 underline-offset-4 hover:text-white hover:underline">
-                                            077-644-0112
-                                        </a>
-                                    </dd>
-                                </div>
-
-                                <div>
-                                    <dt class="text-xs text-zinc-400">
-                                        Customer Relations Department
-                                    </dt>
-                                    <dd class="mt-1">
-                                        <a href="tel:0776440154"
-                                            class="text-sm text-zinc-200 underline-offset-4 hover:text-white hover:underline">
-                                            077-644-0154
-                                        </a>
-                                    </dd>
-                                </div>
-
-                                <div>
-                                    <dt class="text-xs text-zinc-400">
-                                        Service Department
-                                    </dt>
-                                    <dd class="mt-1">
-                                        <a href="tel:0776440251"
-                                            class="text-sm text-zinc-200 underline-offset-4 hover:text-white hover:underline">
-                                            077-644-0251
-                                        </a>
-                                    </dd>
-                                </div>
+                                <?php foreach ($contacts as $contact): ?>
+                                    <div>
+                                        <dt class="text-xs text-zinc-400">
+                                            <?= $contact->title ?>
+                                        </dt>
+                                        <dd class="mt-1">
+                                            <a href="tel:0776440112"
+                                                class="text-sm text-zinc-200 underline-offset-4 hover:text-white hover:underline">
+                                                <?= $contact->value ?>
+                                            </a>
+                                        </dd>
+                                    </div>
+                                <?php endforeach; ?>
                             </dl>
                         </div>
                     </div>
@@ -166,7 +130,8 @@
                         <h4 class="text-sm font-semibold">Office hours</h4>
                         <p class="mt-2 text-sm leading-6 text-zinc-300">
                             Monday – Saturday<br />
-                            8:00 AM – 5:00 PM
+                            8:00 AM – 5:00 PM <br />
+                            Sunday – Closed
                         </p>
                     </div>
                 </div>

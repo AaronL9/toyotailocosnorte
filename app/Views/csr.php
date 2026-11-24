@@ -30,7 +30,7 @@
                     </div>
 
                     <div class="p-6 flex flex-col flex-1">
-                        <time class="text-xs text-toyota-muted font-medium mb-2 block">February 25, 2021</time>
+                        <time class="text-xs text-toyota-muted font-medium mb-2 block"><?= date('F d, Y', strtotime($row->csr_date)) ?></time>
                         <h3 class="csr-title font-display text-lg font-bold leading-snug mb-3 text-toyota-dark">
                             <span><?= $row->csr_title ?></span>
                         </h3>

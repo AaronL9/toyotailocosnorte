@@ -36,6 +36,14 @@ $routes->group('admin', ['filter' => 'adminlogin'], function ($routes) {
     $routes->get('users/(:segment)/edit', 'Admin\User::edit/$1');
     $routes->put('users/(:segment)', 'Admin\User::update/$1');
     $routes->put('users/(:segment)/reset-password', 'Admin\User::resetPassword/$1');
+
+    $routes->get('contact-us', 'Admin\ContactUs::index');
+    $routes->get('contact-us/new', 'Admin\ContactUs::new');
+    $routes->get('contact-us/edit/(:segment)', 'Admin\ContactUs::edit/$1');
+
+    $routes->post('contact-us', 'Admin\ContactUs::create');
+    $routes->put('contact-us/(:segment)', 'Admin\ContactUs::update/$1');
+    $routes->delete('contact-us/(:segment)', 'Admin\ContactUs::delete/$1');
 });
 
 try {

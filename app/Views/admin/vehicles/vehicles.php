@@ -118,7 +118,6 @@
                             </svg>
                         </button>
                     </div>
-
                 </div>
             </template>
         </div>
@@ -142,6 +141,7 @@
                 <span>of</span>
                 <span x-text="pageDetails.pageCount"></span>
             </div>
+
             <button @click="next($event)" x-bind:data-uri="pageDetails.next" type="button"
                 class="size-9 inline-flex justify-center items-center rounded-lg text-gray-600 hover:bg-gray-100 disabled:opacity-40 disabled:pointer-events-none" aria-label="Next">
                 <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
