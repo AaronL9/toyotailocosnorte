@@ -140,7 +140,7 @@ $tags = $vite->tags(
 
                 <div style="width: fit-content"
                     class="w-25 text-gray-300 mt-5 flex flex-col justify-self-end items-end">
-                    <div class="h-30 m-auto"></div>
+                    <img class="h-40 m-auto" src="static/CORSeal.png">
                     <a class="text-center w-full text-[10px]" href="privacy-policy">Privacy Policy</a>
                 </div>
             </div>
