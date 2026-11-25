@@ -43,6 +43,6 @@ jobs:
           protocol: ftps
 
           local-dir: ./public/dist/
-          server-dir: /public_html/dist/
+          server-dir: /dist/
 
           dangerous-clean-slate: true
